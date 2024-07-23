@@ -1,101 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-  <title>Calculadora de Investimentos</title>
-</head>
-
-<body class="h-[100dvh] grid grid-cols-3 grid-rows-2">
-  <aside class=" bg-emerald-300 row-span-2 flex flex-col justify-between py-5 px-2">
-
-    <h1 class="text-2xl	font-bold px-6 ">Calculadora de Investimentos</h1>
-
-    <form id="investment-form" class="w-full">
-      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
-        <label for="starting-amount" class="font-bold text-gray-700">Investimento inicial</label>
-
-        <div class="flex error ">
-          <input value="R$" class="w-1/6 rounded-l-lg text-center font-bold text-gray-600" type="text" disabled>
-          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0.00" id="starting-amount" name="starting-amount" required>
-          <!-- <input type="text" class="w-1/3"  value="mensal"> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calculadora de Investimentos Impressionadora</title>
+  </head>
+  <body class="h-[100dvh] grid grid-cols-3 grid-rows-2">
+    <aside
+      class="row-span-2 bg-emerald-300 flex flex-col justify-between py-5 px-2">
+      <h1 class="text-2xl font-bold px-6">Calculadora de Investimentos</h1>
+      <form id="investment-form" class="w-full">
+        <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+          <label for="starting-amount" class="font-bold text-gray-700"
+            >Investimento inicial</label
+          >
+          <div class="flex">
+            <input
+              value="R$"
+              class="w-1/6 text-center rounded-l-lg"
+              type="text"
+              disabled />
+            <input
+              type="text"
+              class="w-5/6 rounded-r-lg px-2"
+              placeholder="0.00"
+              required
+              id="starting-amount"
+              name="starting-amount" />
+          </div>
         </div>
-
-      </div>
-
-      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
-        <label for="aditional-contribution" class="font-bold text-gray-700">Aportes adicionais</label>
-        <div class="flex">
-          <input value="R$" class="w-1/6 rounded-l-lg text-center font-bold text-gray-600" type="text" disabled>
-          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0.00" id="aditional-contribution" name="aditional-contribution">
-          <!-- <input type="text" class="w-1/3"  value="mensal"> -->
+        <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+          <label for="additional-contribution" class="font-bold text-gray-700"
+            >Aportes adicionais</label
+          >
+          <div class="flex">
+            <input
+              value="R$"
+              class="w-1/6 text-center rounded-l-lg"
+              type="text"
+              disabled />
+            <input
+              type="text"
+              class="w-5/6 rounded-r-lg px-2"
+              placeholder="0.00"
+              name="additional-contribution"
+              id="additional-contribution" />
+          </div>
         </div>
-
-      </div>
-
-      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
-        <label for="time-amount" class="font-bold text-gray-700">Prazo</label>
-        <div class="flex">
-          <input type="text" class="w-2/3 rounded-l-lg px-2" placeholder="0.00" id="time-amount" name="time-amount" required>
-          <select
-            class="w-1/2 rounded-r-lg text-center border-l-2 border-emerald-600 hover:bg-emerald-950 hover:text-slate-200"
-            id="time-amount-period" name="time-amount-period">
-            <option value="monthly">Mensal</option>
-            <option value="yearly">Anual</option>
-          </select>
+        <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+          <label for="time-amount" class="font-bold text-gray-700">Prazo</label>
+          <div class="flex">
+            <input
+              type="text"
+              class="w-2/3 rounded-l-lg px-2"
+              id="time-amount"
+              name="time-amount"
+              required
+              placeholder="0" />
+            <select
+              id="time-amount-period"
+              name="time-amount-period"
+              class="w-1/3 rounded-r-lg border-l-2 border-emerald-600 text-center hover:bg-emerald-950 hover:text-slate-200">
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+            </select>
+          </div>
         </div>
-      </div>
-
-      <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
-        <label for="Retabilidade" class="font-bold text-gray-700">Rentabilidade</label>
-        <div class="flex">
-          <input value="%" class="w-1/6 rounded-l-lg text-center px-2 font-bold text-gray-600" type="text" disabled>
-          <input type="text" class="w-1/2 px-2" placeholder="5" id="return-rate" name="return-rate" required>
-          <select
-            class="w-1/3 rounded-r-lg text-center border-l-2 border-emerald-600 hover:bg-emerald-950 hover:text-slate-200"
-            id="evaluation-period" name="evaluation-period">
-            <option value="monthly">Mensal</option>
-            <option value="yearly">Anual</option>
-          </select>
+        <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+          <label for="return-rate" class="font-bold text-gray-700"
+            >Rentabilidade</label
+          >
+          <div class="flex">
+            <input
+              value="%"
+              class="w-1/6 text-center rounded-l-lg"
+              type="text"
+              disabled />
+            <input
+              type="text"
+              class="w-1/2 px-2"
+              id="return-rate"
+              name="return-rate"
+              required
+              placeholder="0" />
+            <select
+              id="evaluation-period"
+              name="evaluation-period"
+              class="w-1/3 rounded-r-lg border-l-2 border-emerald-600 text-center hover:bg-emerald-950 hover:text-slate-200">
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+            </select>
+          </div>
         </div>
-
-      </div>
-      <div class="flex w-full flex-col px-6 my-2">
-        <label for="text-rate" class="font-bold text-gray-700 h-[4.25rem]">Impostos sobre lucro</label>
-        <div class="flex">
-          <input value="%" class="w-1/6 rounded-l-lg text-center font-bold text-gray-600" type="text" disabled>
-          <input type="text" class="w-5/6 rounded-r-lg px-2" placeholder="0" id="text-rate" name="text-rate" required>
-          <!-- <input type="text" class="w-1/3"  value="mensal"> -->
+        <div class="flex w-full flex-col px-6 my-2 h-[4.25rem]">
+          <label for="tax-rate" class="font-bold text-gray-700"
+            >Impostos sobre lucro</label
+          >
+          <div class="flex">
+            <input
+              value="%"
+              class="w-1/6 text-center rounded-l-lg"
+              type="text"
+              disabled />
+            <input
+              type="text"
+              class="w-5/6 rounded-r-lg px-2"
+              id="tax-rate"
+              name="tax-rate"
+              required
+              placeholder="0" />
+          </div>
         </div>
+      </form>
+      <div class="flex h-12 px-6 my-8 w-full gap-2">
+        <button
+          id="calculate-results"
+          form="investment-form"
+          type="submit"
+          class="w-1/2 rounded-lg bg-emerald-950 text-slate-200 hover:bg-emerald-800">
+          Calcular
+        </button>
+        <button id="clear-form" class="w-1/2 rounded-lg hover:bg-emerald-500">
+          Limpar
+        </button>
       </div>
-    </form>
-
-    <div class="flex h-12 px-6 my-8 w-full gap-2">
-      <button id="calculate-results" form="investment-form" type="submit" class="w-1/2 rounded-lg bg-emerald-950 text-slate-200 hover:bg-emerald-800">
-        Calcular
+    </aside>
+    <main class="row-span-2 col-span-2 relative">
+      <button
+        id="slide-arrow-previous"
+        class="absolute top-0 bottom-0 left-0 text-5xl cursor-pointer bg-slate-200 opacity-50 w-8 hover:opacity-100 focus:opacity-100">
+        &#8249;
       </button>
-      <button id="clear-form" class="w-1/2 rounded-lg hover:bg-emerald-500">
-        Limpar
+      <button
+        id="slide-arrow-next"
+        class="absolute top-0 bottom-0 right-0 text-5xl cursor-pointer bg-slate-200 opacity-50 w-8 hover:opacity-100 focus:opacity-100">
+        &#8250;
       </button>
-    </div>
-
-  </aside>
-  <main class="h-full">
-    <section id="charts-container">
-      <div class="h-[36dvh]">
-        <p>resultado</p>
-        <canvas id="final-money-distribution"></canvas>
+      <div
+        id="carousel"
+        class="h-full w-full flex overflow-x-auto scroll-smooth">
+        <section id="charts-container" class="h-full basis-full shrink-0">
+          <div class="h-[36%] flex flex-col items-center pb-10">
+            <p class="font-bold text-lg">Resultado Final</p>
+            <canvas id="final-money-distribution"></canvas>
+          </div>
+          <div class="h-[56%] flex flex-col items-center">
+            <p class="font-bold text-lg">Progressão</p>
+            <canvas id="progression"></canvas>
+          </div>
+        </section>
+        <section
+          id="table-container"
+          class="h-full overflow-y-auto basis-full shrink-0">
+          <p class="font-bold text-lg text-center">Resultados Mensais</p>
+          <table
+            id="results-table"
+            class="w-full max-h-full border border-separate"></table>
+        </section>
       </div>
-      <div class="h-[56dvh]">
-        <p>progressão</p>
-        <canvas id="progression"></canvas>
-      </div>
-    </section>
-    
-  </main>
-  <script type="module" src="main.js"></script>
-</body>
-
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
