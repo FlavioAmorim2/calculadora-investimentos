@@ -218,6 +218,6 @@ const previousButton = document.getElementById('slide-arrow-previous');
 //   carouselEl.scrollLeft -= mainEl.clientWidth;
 // });
 
-form.addEventListener('submit', renderProgression);
+// form.addEventListener('submit', renderProgression);
 // calculateButton.addEventListener('click', renderProgression);
 clearFormButton.addEventListener('click', clearForm);
