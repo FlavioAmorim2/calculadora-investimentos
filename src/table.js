@@ -4,8 +4,8 @@ const isNonEmptyArray = (arrayElement) => {
   
   export const createTable = (columnsArray, dataArray, tableId) => {
     if (
-      !isNonEmptyArray(columnsArray) &&
-      !isNonEmptyArray(dataArray) &&
+      !isNonEmptyArray(columnsArray) ||
+      !isNonEmptyArray(dataArray) ||
       !tableId
     ) {
       throw new Error(
