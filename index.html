@@ -113,18 +113,24 @@
           </div>
         </div>
       </form>
-      <div class="flex h-12 px-6 my-8 w-full gap-2">
-        <button
-          id="calculate-results"
-          form="investment-form"
-          type="submit"
-          class="w-1/2 rounded-lg bg-emerald-950 text-slate-200 hover:bg-emerald-800">
-          Calcular
-        </button>
-        <button id="clear-form" class="w-1/2 rounded-lg hover:bg-emerald-500">
-          Limpar
-        </button>
+      <div class="flex flex-col w-full my-8 px-6">
+        <div class="flex h-12 gap-2">
+          <button
+            id="calculate-results"
+            form="investment-form"
+            type="submit"
+            class="w-1/2 rounded-lg bg-emerald-950 text-slate-200 hover:bg-emerald-800">
+            Calcular
+          </button>
+          <button id="clear-form" class="w-1/2 rounded-lg hover:bg-emerald-500">
+            Limpar
+          </button>
+        </div>
+        <div class="flex justify-start mt-4">
+          <p><a href="https://github.com/FlavioAmorim2" target="_blank" class="flex">by FlavioAmorim</a></p>
+        </div>
       </div>
+      
     </aside>
     <main class="row-span-2 col-span-2 relative">
       <button
@@ -160,6 +166,7 @@
           </table>
         </section>
       </div>
+      
     </main>
     <script type="module" src="./main.js"></script>
   </body>
